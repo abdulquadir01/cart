@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface OrderService {
 
-    List<Order> getAllCheckout();
+    List<Order> getAllOrder();
 
-    OrderService getCheckoutById(Integer id);
+    Order getOrderById(Integer id);
 
-    OrderService createCheckout(OrderService cartItem);
+    Order createOrder(Order order);
 
-    OrderService updateCheckout(Integer id, OrderService cartItem);
+    Order updateOrder(Integer id, Order order);
 
-    void deleteCheckout(Integer id);
+    void deleteOrder(Integer id);
 
 }

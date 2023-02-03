@@ -1,18 +1,19 @@
 package com.springboot.cart.service;
 
 import com.springboot.cart.model.Cart;
+import com.springboot.cart.model.Checkout;
 
 import java.util.List;
 
 public interface CheckoutService {
 
-    List<Cart> getAllCheckout();
+    List<Checkout> getAllCheckout();
 
-    CheckoutService getCheckoutById(Integer id);
+    Checkout getCheckoutById(Integer id);
 
-    CheckoutService createCheckout(CheckoutService cartItem);
+    Checkout createCheckout(Checkout checkout);
 
-    CheckoutService updateCheckout(Integer id, CheckoutService cartItem);
+    Checkout updateCheckout(Integer id, Checkout checkout);
 
     void deleteCheckout(Integer id);
 

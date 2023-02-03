@@ -1,7 +1,10 @@
-package com.springboot.cart.service;
+package com.springboot.cart.service.impl;
 
 import com.springboot.cart.model.User;
+import com.springboot.cart.model.User;
 import com.springboot.cart.repository.UserRepository;
+import com.springboot.cart.service.UserService;
+import com.springboot.cart.utils.AppUtils;
 import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +39,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public User updateUser(Integer id, User user) {
 
-        return null;
+        User existingUser = userRepository.findById(id).get();
+
+        User newUser = new User();
+        if(AppUtils.anyEmpty(newUser)){
+            newUser = userRepository.save(existingUser);
+            newUser.setUserId(id);
+        }
+
+        return newUser;
+
     }
 
     @Override

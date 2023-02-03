@@ -8,11 +8,11 @@ public interface CartService {
 
     List<Cart> getAllCart();
 
-    CartService getCartById(Integer id);
+    Cart getCartById(Integer id);
 
-    CartService createCart(CartService cartItem);
+    Cart createCart(Cart cart);
 
-    CartService updateCart(Integer id, CartService cartItem);
+    Cart updateCart(Integer id,Cart cart);
 
     void deleteCart(Integer id);
 
